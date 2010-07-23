@@ -1,0 +1,91 @@
+{**
+ * My Application layout template.
+ *
+ * @copyright  Copyright (c) 2010 John Doe
+ * @package    MyApplication
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optinal)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="description" content="Nette Framework web application skeleton">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>Nette Application Skeleton</title>
+
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css" type="text/css">
+	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css" type="text/css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+	<div id="header">
+		<h1>It works!</h1>
+	
+		<h2>Congratulations on your first Nette Framework powered page.</h2>
+	</div>
+	
+	<div>
+		<p>{ifset $message}{$message}{else}<a href="{plink default}">Back to actions list</a>{/if}</p>
+		{foreach $flashes as $flash}<div class="flash {$flash->type}">{$flash->message}</div>{/foreach}
+	
+		{include #content}
+	
+		<a href="http://nette.org" title="Nette Framework - The most innovative PHP framework"><img
+		src="{$basePath}/images/nette-powered2.gif" width="80" height="15" alt="Nette Framework powered"></a>
+	</div>
+	
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	
+		div {
+			padding: .2em 1em;
+		}
+	
+		#header {
+			background: #EEE;
+			border-bottom: 1px #DDD solid;
+		}
+	
+		h1 {
+			color: #0056ad;
+			font-size: 30px;
+		}
+	
+		h2 {
+			color: gray;
+			font-size: 20px;
+		}
+	
+		img {
+			border: none;
+		}
+
+		table {
+			width: 500px;
+		}
+
+		tr.even {
+			background-color: #eee;
+		}
+
+		tr:hover {
+			background-color: black;
+			color: white;
+		}
+
+		th, td {
+			border: 1px solid black;
+		}
+	</style>
+</body>
+</html>

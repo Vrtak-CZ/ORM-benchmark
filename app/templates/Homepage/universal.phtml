@@ -1,0 +1,22 @@
+{block content}
+
+<table>
+	<tr>
+		<th>#Id</th>
+		<th>Name</th>
+		<th>City</th>
+		<th>Execution</th>
+	</tr>
+	<tr>
+		<th colspan="3">Total: </th>
+		<td>{$totalExecution} ms</td>
+	</tr>
+	{foreach $peoples as $people}
+	<tr{if $iterator->isEven()} class="even"{/if}>
+		<td>{$people->id}</td>
+		<td>{$people->name}</td>
+		<td>{$people->city->name}</td>
+		<td>{$queryesExecution[$iterator->getCounter()-1]} ms</td>
+	</tr>
+	{/foreach}
+</table>
