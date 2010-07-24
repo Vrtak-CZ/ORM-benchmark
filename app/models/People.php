@@ -8,20 +8,11 @@ namespace App\Models;
  * @property string $street
  * @property App\Models\ICity $city
  * @property string $mail
+ * @table peoples
+ * @hasOne(name = city, referencedEntity = App\Models\City, column = city_id)
  */
-class People extends \Nette\Object implements IPeople
+class People extends \Ormion\Record implements IPeople
 {
-	/** @var int */
-	private $id;
-	/** @var string */
-	private $name;
-	/** @var string */
-	private $street;
-	/** @var App\Models\ICity */
-	private $city;
-	/** @var string */
-	private $mail;
-
 	/**
 	 * Get people id
 	 *
@@ -29,7 +20,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function getId()
 	{
-		return $this->id;
+		return parent::getId();
 	}
 
 	/**
@@ -39,9 +30,9 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function getName()
 	{
-		return $this->name;
+		return parent::getName();
 	}
-
+	
 	/**
 	 * Set people name
 	 *
@@ -50,7 +41,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function setName($name)
 	{
-		$this->name = $name;
+		parent::__set('name', $name);
 		return $this;
 	}
 
@@ -61,7 +52,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function getStreet()
 	{
-		return $this->street;
+		return parent::getStreet();
 	}
 
 	/**
@@ -72,7 +63,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function setStreet($street)
 	{
-		$this->street = $street;
+		parent::__set('street', $street);
 		return $this;
 	}
 
@@ -83,7 +74,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function getCity()
 	{
-		return $this->city;
+		return parent::getCity();
 	}
 
 	/**
@@ -94,7 +85,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function setCity(ICity $city)
 	{
-		$this->city = $city;
+		parent::__set('city', $city);
 		return $this;
 	}
 
@@ -105,7 +96,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function getMail()
 	{
-		return $this->mail;
+		return parent::getMail();
 	}
 
 	/**
@@ -116,7 +107,21 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function setMail($mail)
 	{
-		$this->mail = $mail;
+		parent::__set('mail', $mail);
 		return $this;
+	}
+
+	/**
+	 * Create new people instance
+	 *
+	 * @param string $name
+	 * @param string $street
+	 * @param App\Models\ICity
+	 * @param string $mail
+	 * @return App\Models\IPeople
+	 */
+	public static function create($name, $street, ICity $city, $mail)
+	{
+		return parent::createX(array('name' => $name, 'street' => $street, 'city' => $city, 'mail' => $mail));
 	}
 }

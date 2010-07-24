@@ -29,6 +29,7 @@ Debug::enable();
 
 // 2b) load configuration from config.ini file
 Environment::loadConfig();
+Ormion\Ormion::connect(Nette\Environment::getConfig("database"));
 
 
 
