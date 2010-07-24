@@ -34,15 +34,15 @@ class EM
 	public static function factory()
 	{
 		$config = new \Doctrine\ORM\Configuration();
-		$cache = new \Nella\NetteDoctrineCache();
-		$config->setMetadataCacheImpl($cache);
+		//$cache = new \Nella\NetteDoctrineCache();
+		//$config->setMetadataCacheImpl($cache);
 		$config->setMetadataDriverImpl($config->newDefaultAnnotationDriver(APP_DIR . "/models"));
-		$config->setQueryCacheImpl($cache);
-        $config->setProxyDir(Environment::getVariable('tempDir') . '/Doctrine-Proxies');
-        $config->setProxyNamespace('App\Models\Proxies');
-        $config->setAutoGenerateProxyClasses(TRUE);
+		//$config->setQueryCacheImpl($cache);
+    $config->setProxyDir(Environment::getVariable('tempDir') . '/Doctrine-Proxies');
+    $config->setProxyNamespace('App\Models\Proxies');
+    $config->setAutoGenerateProxyClasses(TRUE);
 
-        return \Doctrine\ORM\EntityManager::create((array) Environment::getConfig('database'), $config);
+    return \Doctrine\ORM\EntityManager::create((array) Environment::getConfig('database'), $config);
 	}
 }
 
