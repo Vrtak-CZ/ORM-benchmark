@@ -58,7 +58,9 @@ class City extends \Nette\Object implements ICity
 	 */
 	public static function find($id)
 	{
-		return Environment::getService('Doctrine\ORM\EntityManager')->find(get_called_class(), $id);
+		$qb = Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())->createQueryBuilder('c')
+			->where("c.id = ?1")->setParameter(1, $id);
+		return $qb->getQuery()->getSingleResult();
 	}
 
 	/**
@@ -69,8 +71,9 @@ class City extends \Nette\Object implements ICity
 	 */
 	public static function findByName($name)
 	{
-		return Environment::getService('Doctrine\ORM\EntityManager')
-			->getRepository(get_called_class())->findOneBy(array('name' => $name));
+		$qb = Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())->createQueryBuilder('c')
+			->where("c.name = ?1")->setParameter(1, $name);
+		return $qb->getQuery()->getSingleResult();
 	}
 
 	/**

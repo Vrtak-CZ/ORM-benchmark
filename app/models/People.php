@@ -160,7 +160,9 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public static function find($id)
 	{
-		return Environment::getService('Doctrine\ORM\EntityManager')->find(get_called_class(), $id);
+		$qb = Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())->createQueryBuilder('p')
+			->where("p.id = ?1")->setParameter(1, $id);
+		return $qb->getQuery()->getSingleResult();
 	}
 
 	/**
