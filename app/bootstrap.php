@@ -30,6 +30,7 @@ Debug::enable();
 // 2b) load configuration from config.ini file
 Environment::loadConfig();
 
+dibi::connect(Environment::getConfig('database'));
 
 
 // Step 3: Configure application
