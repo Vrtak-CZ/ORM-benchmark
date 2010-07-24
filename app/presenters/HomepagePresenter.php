@@ -182,7 +182,9 @@ class HomepagePresenter extends BasePresenter
 		foreach ($ids as $id) {
 			Debug::timer();
 			// SELECT DATA
-			$peoples[] = Models\People::find($id);
+			$people = Models\People::find($id);
+			$people->city;
+			$peoples[] = $people;
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
 
