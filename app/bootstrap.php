@@ -29,7 +29,19 @@ Debug::enable();
 
 // 2b) load configuration from config.ini file
 Environment::loadConfig();
+class EM
+{
+	public static function factory()
+	{
+		$config = new \Doctrine\ORM\Configuration();
+		$config->setMetadataDriverImpl($config->newDefaultAnnotationDriver(APP_DIR . "/models"));
+        $config->setProxyDir(Environment::getVariable('tempDir') . '/Doctrine-Proxies');
+        $config->setProxyNamespace('App\Models\Proxies');
+        $config->setAutoGenerateProxyClasses(TRUE);
 
+        return \Doctrine\ORM\EntityManager::create((array) Environment::getConfig('database'), $config);
+	}
+}
 
 
 // Step 3: Configure application
