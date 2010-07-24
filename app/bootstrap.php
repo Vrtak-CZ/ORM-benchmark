@@ -29,7 +29,14 @@ Debug::enable();
 
 // 2b) load configuration from config.ini file
 Environment::loadConfig();
-
+class EM
+{
+	public static function factory()
+	{
+		dibi::connect(Environment::getConfig('database'));
+		return ActiveMapper\Manager::getManager();
+	}
+}
 
 
 // Step 3: Configure application
