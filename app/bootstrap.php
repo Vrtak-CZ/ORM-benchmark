@@ -30,6 +30,9 @@ Debug::enable();
 // 2b) load configuration from config.ini file
 Environment::loadConfig();
 
+$database = Environment::getConfig('database');
+$pdo = new PDO($database['dsn'], $database['username'], $database['password']);
+$notORM = new NotORM($pdo);
 
 
 // Step 3: Configure application
