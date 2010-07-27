@@ -5496,7 +5496,8 @@ INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (4997,	'Františka Urbanová',	'Za Kovárnou 37',	361,	'frantiska.urbanova@centrum.cz'),
 (4998,	'Břetislav Hájek',	'K. Čapka 20',	219,	'bretislav.hajek@atlas.cz'),
 (4999,	'Lucie Blažková',	'Slezská 36',	1,	'blazkova@atlas.cz'),
-(5000,	'Vlastimil Dvořák',	'Sladkovského 7',	379,	'vlastimil.dvorak@centrum.cz'),
+(5000,	'Vlastimil Dvořák',	'Sladkovského 7',	379,	'vlastimil.dvorak@centrum.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (5001,	'Bedřich Doležal',	'B. Němcové 15',	186,	'bedrich.dolezal@atlas.cz'),
 (5002,	'Irena Benešová',	'Mozartova 50',	381,	'benesova@email.cz'),
 (5003,	'Lucie Veselá',	'Železniční 40',	145,	'lucie.vesela@email.cz'),
@@ -10496,7 +10497,8 @@ INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (9997,	'Vojtěch Bureš',	'Brožíkova 2',	229,	'vojtech.bures@centrum.cz'),
 (9998,	'Ondřej Kolář',	'K Cihelně 8',	323,	'ondrej.kolar@email.cz'),
 (9999,	'Květoslava Růžičková',	'Svojsíkova 26',	486,	'ruzickova@seznam.cz'),
-(10000,	'Jiřina Kovářová',	'U Jezu 7',	102,	'jirina.kovarova@email.cz'),
+(10000,	'Jiřina Kovářová',	'U Jezu 7',	102,	'jirina.kovarova@email.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (10001,	'Eliška Sedláčková',	'Slovenská 44',	34,	'sedlackova@centrum.cz'),
 (10002,	'Antonín Mareš',	'Hraniční 3',	466,	'mares@seznam.cz'),
 (10003,	'Kamil Němec',	'Vltavská 29',	347,	'kamil.nemec@seznam.cz'),
@@ -15497,7 +15499,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (14997,	'Pavel Král',	'Úprkova 19',	386,	'kral55@centrum.cz'),
 (14998,	'Adolf Soukup',	'Na Nivách 1',	401,	'soukup@email.cz'),
 (14999,	'Drahomíra Pospíšilová',	'Lipová 40',	212,	'drahomira.pospisilova@email.cz'),
-(15000,	'Vojtěch Blažek',	'Malé Náměstí 20',	393,	'vojtech.blazek@seznam.cz'),
+(15000,	'Vojtěch Blažek',	'Malé Náměstí 20',	393,	'vojtech.blazek@seznam.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (15001,	'Rostislav Doležal',	'Českolipská 17',	158,	'rostislav.dolezal@centrum.cz'),
 (15002,	'Natálie Doležalová',	'Francouzská 25',	95,	'dolezalova68@centrum.cz'),
 (15003,	'Adéla Kučerová',	'Ke Hřbitovu 20',	35,	'kucerova@seznam.cz'),
@@ -20497,7 +20500,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (19997,	'Vlastimil Dvořák',	'Břízová 39',	319,	'dvorak65@seznam.cz'),
 (19998,	'Ladislava Musilová',	'Stříbrná 34',	288,	'musilova@centrum.cz'),
 (19999,	'Marek Fiala',	'Za Mlýnem 42',	449,	'marek.fiala@centrum.cz'),
-(20000,	'Igor Hájek',	'Resslova 32',	363,	'hajek@email.cz'),
+(20000,	'Igor Hájek',	'Resslova 32',	363,	'hajek@email.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (20001,	'Bedřich Tichý',	'U Kina 50',	433,	'bedrich.tichy@email.cz'),
 (20002,	'Miroslav Jelínek',	'Kubelíkova 33',	212,	'miroslav.jelinek@seznam.cz'),
 (20003,	'Alice Čermáková',	'Strážní Domek 49',	471,	'cermakova@seznam.cz'),
@@ -25497,7 +25501,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (24997,	'Alena Vávrová',	'Za Tratí 45',	462,	'vavrova@centrum.cz'),
 (24998,	'Kamil Kovář',	'Střelecká 24',	232,	'kamil.kovar@seznam.cz'),
 (24999,	'Vladimír Kučera',	'Pekařská 2',	454,	'kucera@atlas.cz'),
-(25000,	'Tereza Marková',	'Na Tržišti 28',	433,	'markova60@atlas.cz'),
+(25000,	'Tereza Marková',	'Na Tržišti 28',	433,	'markova60@atlas.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (25001,	'Ladislava Dvořáková',	'Fialková 20',	135,	'dvorakova@email.cz'),
 (25002,	'Jaromír Vlček',	'U Zastávky 44',	73,	'vlcek@email.cz'),
 (25003,	'Emilie Krejčová',	'Čapkova 25',	200,	'krejcova74@email.cz'),
@@ -30498,7 +30503,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (29997,	'Miroslav Kadlec',	'Břízová 49',	69,	'miroslav.kadlec@atlas.cz'),
 (29998,	'Miroslav Vlček',	'Benátky 11',	366,	'vlcek76@atlas.cz'),
 (29999,	'Karel Pokorný',	'Údolní 8',	236,	'pokorny@centrum.cz'),
-(30000,	'Eva Hrušková',	'Znojemská 11',	429,	'hruskova@atlas.cz'),
+(30000,	'Eva Hrušková',	'Znojemská 11',	429,	'hruskova@atlas.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (30001,	'Kamila Čechová',	'Skalka 39',	117,	'kamila.cechova@email.cz'),
 (30002,	'Vlastimil Bláha',	'Náměstí 5.Května 35',	72,	'vlastimil.blaha@centrum.cz'),
 (30003,	'Lenka Krejčová',	'Spádová 40',	89,	'krejcova@centrum.cz'),
@@ -35498,7 +35504,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (34997,	'Simona Tichá',	'Masná 7',	476,	'simona.ticha@centrum.cz'),
 (34998,	'Miroslav Vaněk',	'Cihlářská 36',	472,	'vanek@atlas.cz'),
 (34999,	'Miloš Dvořák',	'Koněvova 36',	305,	'dvorak@seznam.cz'),
-(35000,	'Blažena Bartošová',	'Legionářská 46',	179,	'blazena.bartosova@centrum.cz'),
+(35000,	'Blažena Bartošová',	'Legionářská 46',	179,	'blazena.bartosova@centrum.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (35001,	'Dana Marková',	'Na Průhoně 7',	19,	'dana.markova@centrum.cz'),
 (35002,	'Ladislava Jelínková',	'Elišky Krásnohorské 13',	306,	'ladislava.jelinkova@email.cz'),
 (35003,	'Anna Procházková',	'Josefská 45',	289,	'anna.prochazkova@email.cz'),
@@ -40498,7 +40505,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (39997,	'Jindřich Moravec',	'Jeronýmova 6',	142,	'moravec@seznam.cz'),
 (39998,	'Bohumila Černá',	'Chrudimská 32',	23,	'cerna@atlas.cz'),
 (39999,	'Vendula Marešová',	'Příkopy 46',	381,	'vendula.maresova@seznam.cz'),
-(40000,	'Vladislav Dostál',	'Za Pilou 42',	182,	'vladislav.dostal@centrum.cz'),
+(40000,	'Vladislav Dostál',	'Za Pilou 42',	182,	'vladislav.dostal@centrum.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (40001,	'Adéla Jelínková',	'Svážná 30',	425,	'adela.jelinkova@atlas.cz'),
 (40002,	'Václav Říha',	'Trnková 17',	185,	'vaclav.riha@centrum.cz'),
 (40003,	'Miroslava Valentová',	'Náves 16',	384,	'valentova@centrum.cz'),
@@ -45499,7 +45507,8 @@ INSERT INTO `peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (44997,	'Alexander Kadlec',	'Sukova 48',	353,	'alexander.kadlec@seznam.cz'),
 (44998,	'Pavlína Urbanová',	'Čs.Armády 40',	71,	'urbanova@seznam.cz'),
 (44999,	'Drahomíra Hájková',	'Písková 33',	316,	'hajkova@seznam.cz'),
-(45000,	'Peter Horák',	'Lánská 4',	261,	'peter.horak@centrum.cz'),
+(45000,	'Peter Horák',	'Lánská 4',	261,	'peter.horak@centrum.cz');
+INSERT INTO `Peoples` (`id`, `name`, `street`, `city_id`, `mail`) VALUES
 (45001,	'Radka Vaňková',	'Vídeňská 39',	29,	'vankova@seznam.cz'),
 (45002,	'Martina Konečná',	'Benešovská 35',	280,	'konecna@atlas.cz'),
 (45003,	'Růžena Kratochvílová',	'Na Samotě 43',	465,	'ruzena.kratochvilova@email.cz'),

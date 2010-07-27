@@ -7,44 +7,13 @@ namespace App\Models;
  * @property-read string $name
  * @table cities
  */
-class City extends \Ormion\Record implements ICity
+class City extends \Ormion\Record
 {
-	/**
-	 * Get city id
-	 *
-	 * @return int
-	 */
-	public function getId()
-	{
-		return parent::getId();
-	}
-
-	/**
-	 * Get city name
-	 *
-	 * @return string
-	 */
-	public function getName()
-	{
-		return parent::getName();
-	}
-
-	/**
-	 * Find city by name
-	 *
-	 * @param string $name
-	 * @return App\Models\ICity|NULL
-	 */
-	public static function findByName($name)
-	{
-		return parent::findByName($name);
-	}
-
 	/**
 	 * Create new city instance
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public static function create($name)
 	{
