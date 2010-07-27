@@ -8,7 +8,8 @@
  */
 
 use Nette\Debug,
-	App\Models;
+	App\Models,
+	Nette\Environment;
 
 /**
  * Homepage presenter.
@@ -212,6 +213,7 @@ class HomepagePresenter extends BasePresenter
 			$peoples[] = Models\People::create($people['name'], $people['street'], $city, $people['mail'])->save();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		Environment::getService('ActiveMapper\Manager')->flush();
 
 		return array($queryesExecution, $peoples);
 	}
@@ -242,6 +244,7 @@ class HomepagePresenter extends BasePresenter
 			$peoples[] = $people->save();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		Environment::getService('ActiveMapper\Manager')->flush();
 
 		return array($queryesExecution, $peoples);
 	}
@@ -265,6 +268,7 @@ class HomepagePresenter extends BasePresenter
 			$people->delete();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		Environment::getService('ActiveMapper\Manager')->flush();
 
 		return array($queryesExecution, $peoples);
 	}

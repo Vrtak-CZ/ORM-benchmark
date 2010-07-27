@@ -73,7 +73,7 @@ class People extends \ActiveMapper\Proxy
 	public function save()
 	{
 		$em = Environment::getService('ActiveMapper\Manager');
-		$em->persist($this)->flush();
+		$em->persist($this);
 		return $this;
 	}
 
@@ -83,6 +83,6 @@ class People extends \ActiveMapper\Proxy
 	public function delete()
 	{
 		$em = Environment::getService('ActiveMapper\Manager');
-		$em->delete($this)->flush();
+		$em->delete($this);
 	}
 }
