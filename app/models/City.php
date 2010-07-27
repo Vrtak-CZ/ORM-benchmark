@@ -93,7 +93,6 @@ class City extends \Nette\Object
 	{
 		$em = Environment::getService('Doctrine\ORM\EntityManager');
 		$em->persist($this);
-		$em->flush();
 		return $this;
 	}
 
@@ -104,6 +103,5 @@ class City extends \Nette\Object
 	{
 		$em = Environment::getService('Doctrine\ORM\EntityManager');
 		$em->remove($this);
-		$em->flush();
 	}
 }
