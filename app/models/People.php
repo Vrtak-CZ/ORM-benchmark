@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use dibi;
+use Nette\Environment;
 
 /**
  * @property-read int $id
@@ -149,7 +149,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public static function find($id)
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		$data = $notORM->peoples("id", $id)->fetch();
 		if ($data === FALSE)
 			return NULL;
@@ -177,7 +177,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function save()
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		if (!isset($this->id)) {
 			$this->id = $notORM->peoples(array('name' => $this->name, 'street' => $this->street, 'city_id' => $this->city->id, 'mail' => $this->mail));
 		} else {
@@ -192,7 +192,7 @@ class People extends \Nette\Object implements IPeople
 	 */
 	public function delete()
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		if (isset($this->id)) {
 			$notORM->peoples("id", $this->id)->delete();
 			$this->id = NULL;

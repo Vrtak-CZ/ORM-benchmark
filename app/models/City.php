@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Nette\Environment;
+
 /**
  * @property-read int $id
  * @property-read string $name
@@ -48,7 +50,7 @@ class City extends \Nette\Object implements ICity
 	 */
 	public static function find($id)
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		$data = $notORM->cities("id", $id)->fetch();
 		if ($data === FALSE)
 			return NULL;
@@ -63,7 +65,7 @@ class City extends \Nette\Object implements ICity
 	 */
 	public static function findByName($name)
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		$data = $notORM->cities("name", $name)->fetch();
 		if ($data === FALSE)
 			return NULL;
@@ -88,7 +90,7 @@ class City extends \Nette\Object implements ICity
 	 */
 	public function save()
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		if (!isset($this->id)) {
 			$this->id = $notORM->cities(array('name' => $this->name));
 		}
@@ -100,7 +102,7 @@ class City extends \Nette\Object implements ICity
 	 */
 	public function delete()
 	{
-		global $notORM;
+		$notORM = Environment::getService('NotORM');
 		if (isset($this->id)) {
 			$notORM->cities("id", $this->id)->delete();
 			$this->id = NULL;
