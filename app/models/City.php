@@ -8,7 +8,7 @@ use dibi;
  * @property-read int $id
  * @property-read string $name
  */
-class City extends \Nette\Object implements ICity
+class City extends \Nette\Object
 {
 	const TABLE_NAME = "Cities";
 
@@ -48,7 +48,7 @@ class City extends \Nette\Object implements ICity
 	 * Find city by id
 	 *
 	 * @param int $id
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function find($id)
 	{
@@ -63,7 +63,7 @@ class City extends \Nette\Object implements ICity
 	 * Find city by name
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function findByName($name)
 	{
@@ -78,7 +78,7 @@ class City extends \Nette\Object implements ICity
 	 * Create new city instance
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public static function create($name)
 	{
@@ -88,7 +88,7 @@ class City extends \Nette\Object implements ICity
 	/**
 	 * Save city changes
 	 *
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public function save()
 	{

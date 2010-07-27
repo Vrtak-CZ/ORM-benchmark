@@ -8,10 +8,10 @@ use dibi;
  * @property-read int $id
  * @property string $name
  * @property string $street
- * @property App\Models\ICity $city
+ * @property App\Models\City $city
  * @property string $mail
  */
-class People extends \Nette\Object implements IPeople
+class People extends \Nette\Object
 {
 	const TABLE_NAME = "Peoples";
 
@@ -21,7 +21,7 @@ class People extends \Nette\Object implements IPeople
 	private $name;
 	/** @var string */
 	private $street;
-	/** @var App\Models\ICity */
+	/** @var App\Models\City */
 	private $city = NULL;
 	/** @var string */
 	private $mail;
@@ -65,7 +65,7 @@ class People extends \Nette\Object implements IPeople
 	 * Set people name
 	 *
 	 * @param string $name
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
 	public function setName($name)
 	{
@@ -87,7 +87,7 @@ class People extends \Nette\Object implements IPeople
 	 * Set people street
 	 *
 	 * @param string $street
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
 	public function setStreet($street)
 	{
@@ -98,7 +98,7 @@ class People extends \Nette\Object implements IPeople
 	/**
 	 * Get people city
 	 *
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public function getCity()
 	{
@@ -110,10 +110,10 @@ class People extends \Nette\Object implements IPeople
 	/**
 	 * Set people city
 	 *
-	 * @param App\Models\ICity $city
-	 * @return App\Models\IPeople
+	 * @param App\Models\City $city
+	 * @return App\Models\People
 	 */
-	public function setCity(ICity $city)
+	public function setCity(City $city)
 	{
 		if ($city->id == NULL)
 			$city->save();
@@ -135,7 +135,7 @@ class People extends \Nette\Object implements IPeople
 	 * Set people mail
 	 *
 	 * @param string $mail
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
 	public function setMail($mail)
 	{
@@ -147,7 +147,7 @@ class People extends \Nette\Object implements IPeople
 	 * Find people by id
 	 *
 	 * @param int $id
-	 * @return App\Models\IPeople|NULL
+	 * @return App\Models\People|NULL
 	 */
 	public static function find($id)
 	{
@@ -163,11 +163,11 @@ class People extends \Nette\Object implements IPeople
 	 *
 	 * @param string $name
 	 * @param string $street
-	 * @param App\Models\ICity
+	 * @param App\Models\City
 	 * @param string $mail
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
-	public static function create($name, $street, ICity $city, $mail)
+	public static function create($name, $street, City $city, $mail)
 	{
 		return new static(array('name' => $name, 'street' => $street, 'city' => $city, 'mail' => $mail));
 	}
@@ -175,7 +175,7 @@ class People extends \Nette\Object implements IPeople
 	/**
 	 * Save people changes
 	 *
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
 	public function save()
 	{
