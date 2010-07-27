@@ -126,6 +126,8 @@ class Statement implements DriverStatement
         if ($this->_conn->getConfiguration()->getSQLLogger()) {
             $this->_conn->getConfiguration()->getSQLLogger()->logSQL($this->_sql, $this->_params);
         }
+        \Nette\Debug::$counters['queries']++;
+        
         $this->_params = array();
         return $this->_stmt->execute($params);
     }

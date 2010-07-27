@@ -184,7 +184,7 @@ class HomepagePresenter extends BasePresenter
 			Debug::timer();
 			// SELECT DATA
 			$people = Models\People::find($id);
-			$people->city;
+			$people->city->name;
 			$peoples[] = $people;
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
