@@ -36,6 +36,8 @@ class NO
 	{
 		$database = Environment::getConfig('database');
 		$pdo = new PDO($database['dsn'], $database['username'], $database['password']);
+		Debug::$counters['queries'] = 0;
+		
 		return new NotORM($pdo);
 	}
 }
