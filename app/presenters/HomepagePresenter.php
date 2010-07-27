@@ -202,6 +202,7 @@ class HomepagePresenter extends BasePresenter
 		$ids = $this->getRandomsNumbers(50);
 		$queryesExecution = array();
 		$peoples = array();
+		dibi::begin();
 		foreach ($ids as $id) {
 			Debug::timer();
 			// INSERT DATA
@@ -212,6 +213,7 @@ class HomepagePresenter extends BasePresenter
 			$peoples[] = Models\People::create($people['name'], $people['street'], $city, $people['mail'])->save();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		dibi::commit();
 
 		return array($queryesExecution, $peoples);
 	}
@@ -228,6 +230,7 @@ class HomepagePresenter extends BasePresenter
 		$ids2 = $this->getRandomsNumbers(50);
 		$queryesExecution = array();
 		$peoples = array();
+		dibi::begin();
 		foreach ($ids as $key => $id) {
 			Debug::timer();
 			// SELECT + UPDATE DATA
@@ -240,6 +243,7 @@ class HomepagePresenter extends BasePresenter
 			$peoples[] = $people->save();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		dibi::commit();
 
 		return array($queryesExecution, $peoples);
 	}
@@ -255,6 +259,7 @@ class HomepagePresenter extends BasePresenter
 		$ids = $this->getRandomsNumbers(50, 50000, 1);
 		$queryesExecution = array();
 		$peoples = array();
+		dibi::begin();
 		foreach ($ids as $id) {
 			Debug::timer();
 			// SELECT + DELETE DATA
@@ -263,6 +268,7 @@ class HomepagePresenter extends BasePresenter
 			$people->delete();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}
+		dibi::commit();
 
 		return array($queryesExecution, $peoples);
 	}
