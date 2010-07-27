@@ -9,7 +9,7 @@ use Nette\Environment;
  * @property-read string $name
  * @tableName cities
  */
-class City extends \ActiveMapper\Proxy implements ICity
+class City extends \ActiveMapper\Proxy
 {
 	/**
 	 * @var int
@@ -25,30 +25,10 @@ class City extends \ActiveMapper\Proxy implements ICity
 	protected $name;
 
 	/**
-	 * Get city id
-	 *
-	 * @return int
-	 */
-	public function getId()
-	{
-		return parent::getId();
-	}
-
-	/**
-	 * Get name
-	 *
-	 * @return string
-	 */
-	public function getName()
-	{
-		return parent::getName();
-	}
-
-	/**
 	 * Find city by id
 	 *
 	 * @param int $id
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function find($id)
 	{
@@ -59,7 +39,7 @@ class City extends \ActiveMapper\Proxy implements ICity
 	 * Find city by name
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function findByName($name)
 	{
@@ -70,7 +50,7 @@ class City extends \ActiveMapper\Proxy implements ICity
 	 * Create new city instance
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public static function create($name)
 	{
@@ -80,7 +60,7 @@ class City extends \ActiveMapper\Proxy implements ICity
 	/**
 	 * Save city changes
 	 *
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public function save()
 	{

@@ -235,8 +235,11 @@ class HomepagePresenter extends BasePresenter
 			$city = Models\City::findByName($this->peoplesData[$ids2[$key]]['city']);
 			if ($city == NULL)
 				$city = Models\City::create($this->peoplesData[$ids2[$key]]['city']);
-			$people->setName($this->peoplesData[$ids2[$key]]['name'])->setStreet($this->peoplesData[$ids2[$key]]['street'])
-					->setCity($city)->setMail($this->peoplesData[$ids2[$key]]['mail']);
+			$people->name = $this->peoplesData[$ids2[$key]]['name'];
+			$people->street = $this->peoplesData[$ids2[$key]]['street'];
+			$people->city = $city;
+			$people->mail = $this->peoplesData[$ids2[$key]]['mail'];
+			\Nette\Debug::barDump($people);
 			$peoples[] = $people->save();
 			$queryesExecution[] = number_format(Debug::timer() * 1000, 2);
 		}

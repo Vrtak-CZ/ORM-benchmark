@@ -8,12 +8,12 @@ use Nette\Environment;
  * @property-read int $id
  * @property string $name
  * @property string $street
- * @property App\Models\ICity $city
+ * @property App\Models\City $city
  * @property string $mail
  * @tableName peoples
  * @ManyToOne(App\Models\City)
  */
-class People extends \ActiveMapper\Proxy implements IPeople
+class People extends \ActiveMapper\Proxy
 {
 	/**
 	 * @var int
@@ -39,110 +39,10 @@ class People extends \ActiveMapper\Proxy implements IPeople
 	protected $mail;
 
 	/**
-	 * Get people id
-	 *
-	 * @return int
-	 */
-	public function getId()
-	{
-		return parent::getId();
-	}
-
-	/**
-	 * Get people name
-	 *
-	 * @return string
-	 */
-	public function getName()
-	{
-		return parent::getName();
-	}
-
-	/**
-	 * Set people name
-	 *
-	 * @param string $name
-	 * @return App\Models\IPeople
-	 */
-	public function setName($name)
-	{
-		parent::__set('name', $name);
-		return $this;
-	}
-
-	/**
-	 * Get people street
-	 *
-	 * @return string
-	 */
-	public function getStreet()
-	{
-		return parent::__get('street');
-	}
-
-	/**
-	 * Set people street
-	 *
-	 * @param string $street
-	 * @return App\Models\IPeople
-	 */
-	public function setStreet($street)
-	{
-		parent::__set('street', $street);
-		return $this;
-	}
-
-	/**
-	 * Get people city
-	 *
-	 * @return App\Models\ICity
-	 */
-	public function getCity()
-	{
-		return parent::__get('city');
-	}
-
-	/**
-	 * Set people city
-	 *
-	 * @param App\Models\ICity $city
-	 * @return App\Models\IPeople
-	 */
-	public function setCity(ICity $city)
-	{
-        /*if ($city->id == NULL)
-            $city->save();*/
-		parent::__set('city', $city);
-		return $this;
-	}
-
-	/**
-	 * Get people name
-	 *
-	 * @return string
-	 */
-	public function getMail()
-	{
-		return parent::__get('mail');;
-	}
-
-	/**
-	 * Set people mail
-	 *
-	 * @param string $mail
-	 * @return App\Models\IPeople
-	 */
-	public function setMail($mail)
-	{
-		parent::__set('mail', $mail);
-		return $this;
-	}
-
-	/**
 	 * Find people by id
 	 *
 	 * @param int $id
-	 * @return App\Models\IPeople|NULL
+	 * @return App\Models\People|NULL
 	 */
 	public static function find($id)
 	{
@@ -154,11 +54,11 @@ class People extends \ActiveMapper\Proxy implements IPeople
 	 *
 	 * @param string $name
 	 * @param string $street
-	 * @param App\Models\ICity
+	 * @param App\Models\City
 	 * @param string $mail
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
-	public static function create($name, $street, ICity $city, $mail)
+	public static function create($name, $street, City $city, $mail)
 	{
 		$data = new static(array('name' => $name, 'street' => $street, 'mail' => $mail));
 		$data->city = $city;
@@ -168,7 +68,7 @@ class People extends \ActiveMapper\Proxy implements IPeople
 	/**
 	 * Save people changes
 	 *
-	 * @return App\Models\IPeople
+	 * @return App\Models\People
 	 */
 	public function save()
 	{
