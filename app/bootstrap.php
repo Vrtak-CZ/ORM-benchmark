@@ -41,6 +41,7 @@ class EM
 		$config->setProxyDir(APP_DIR . '/models/Proxies');
 		$config->setProxyNamespace('App\Models\Proxies');
 		$config->setAutoGenerateProxyClasses(TRUE);
+		Debug::$counters['queries'] = 0;
 
 		return \Doctrine\ORM\EntityManager::create((array) Environment::getConfig('database'), $config);
 	}

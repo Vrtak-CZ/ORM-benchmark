@@ -555,6 +555,7 @@ class Connection implements DriverConnection
         if ($this->_config->getSQLLogger() !== null) {
             $this->_config->getSQLLogger()->logSQL($query, $params);
         }
+        \Nette\Debug::$counters['queries']++;
 
         if ($params) {
             $stmt = $this->_conn->prepare($query);
