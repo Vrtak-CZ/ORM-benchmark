@@ -269,9 +269,9 @@ class HomepagePresenter extends BasePresenter
 
 	protected function shutdown($response)
 	{
-		parent::shutdown($response);
 		if (isset($this->template->totalExecution))
 			file_put_contents(APP_DIR . "/log/" . $this->getAction() . ".log", date('r') . " @ " . $this->template->totalExecution 
-					. " ms # " . number_format(memory_get_peak_usage() / 1000, 2) . "kB\r\n", FILE_APPEND);
+					. " ms # " . number_format(memory_get_peak_usage() / 1000, 2) . "kB # " . \dibi::$numOfQueries . "\r\n", FILE_APPEND);
+		parent::shutdown($response);
 	}
 }
