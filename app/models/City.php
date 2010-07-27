@@ -10,7 +10,7 @@ use Nette\Environment;
  * @Entity
  * @Table(name="cities")
  */
-class City extends \Nette\Object implements ICity
+class City extends \Nette\Object
 {
 	/**
 	 * @Id @Column(type="integer")
@@ -54,33 +54,30 @@ class City extends \Nette\Object implements ICity
 	 * Find city by id
 	 *
 	 * @param int $id
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function find($id)
 	{
-		$qb = Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())->createQueryBuilder('c')
-			->where("c.id = ?1")->setParameter(1, $id);
-		return $qb->getQuery()->getSingleResult();
+		return Environment::getService('Doctrine\ORM\EntityManager')->find(get_called_class(), $id);
 	}
 
 	/**
 	 * Find city by name
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity|NULL
+	 * @return App\Models\City|NULL
 	 */
 	public static function findByName($name)
 	{
-		$qb = Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())->createQueryBuilder('c')
-			->where("c.name = ?1")->setParameter(1, $name);
-		return $qb->getQuery()->getSingleResult();
+		return Environment::getService('Doctrine\ORM\EntityManager')->getRepository(get_called_class())
+			->findOneBy(array('name' => $name));
 	}
 
 	/**
 	 * Create new city instance
 	 *
 	 * @param string $name
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public static function create($name)
 	{
@@ -90,7 +87,7 @@ class City extends \Nette\Object implements ICity
 	/**
 	 * Save city changes
 	 *
-	 * @return App\Models\ICity
+	 * @return App\Models\City
 	 */
 	public function save()
 	{
