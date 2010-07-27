@@ -6,7 +6,7 @@ namespace App\Models;
  * @property-read int $id
  * @property-read string $name
  */
-class City extends \Nette\Object implements ICity
+class City extends \Nette\Object
 {
 	/** @var int */
 	private $id;

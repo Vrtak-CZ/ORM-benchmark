@@ -9,7 +9,7 @@ namespace App\Models;
  * @property App\Models\ICity $city
  * @property string $mail
  */
-class People extends \Nette\Object implements IPeople
+class People extends \Nette\Object
 {
 	/** @var int */
 	private $id;
