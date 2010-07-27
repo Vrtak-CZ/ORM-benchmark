@@ -334,6 +334,7 @@ class DibiConnection extends DibiObject
 		}
 
 		dibi::$sql = $sql;
+		dibi::$numOfQueries++;
 		if ($res = $this->driver->query($sql)) { // intentionally =
 			$res = new DibiResult($res, $this->config['result']);
 		} else {
